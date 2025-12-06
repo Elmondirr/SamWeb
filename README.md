@@ -1,1 +1,2188 @@
-# SamWeb
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secrets Banks Indicators – Professional Trading Signals</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    :root {
+      --bg: #020617;
+      --bg-alt: #020617;
+      --surface: #020617;
+      --surface-soft: #020617;
+      --border: rgba(148, 163, 184, 0.35);
+      --green: #16a34a;
+      --green-soft: rgba(22, 163, 74, 0.12);
+      --red: #dc2626;
+      --red-soft: rgba(220, 38, 38, 0.12);
+      --accent: #3b82f6;
+      --accent-soft: rgba(59, 130, 246, 0.14);
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --card-bg: #020617;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #020617 0, #020617 35%, #020617 100%);
+      color: var(--text-main);
+      overflow-x: hidden;
+      padding-top: 70px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* NAVBAR */
+
+    .nav {
+      position: fixed;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 70px;
+      z-index: 100;
+      background: rgba(15, 23, 42, 0.98);
+      border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 18px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: #020617;
+      border: 1px solid rgba(55, 65, 81, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #e5e7eb;
+    }
+
+    .nav-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .nav-title {
+      font-size: 0.98rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .nav-title span {
+      color: #facc15;
+    }
+
+    .nav-subtitle {
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      padding: 7px 10px;
+      border-radius: 999px;
+      color: var(--text-muted);
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      background: rgba(30, 64, 175, 0.14);
+      color: #bfdbfe;
+    }
+
+    /* Language switch */
+
+    .lang-switch {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .lang-option {
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 1);
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      padding: 4px 8px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .lang-option.active {
+      background: rgba(37, 99, 235, 0.16);
+      border-color: var(--accent);
+      color: #e5e7eb;
+    }
+
+    .nav-cta {
+      margin-left: 4px;
+    }
+
+    .nav-cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: var(--accent);
+      border: 1px solid rgba(37, 99, 235, 1);
+      color: #e5e7eb;
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .nav-cta a:hover {
+      background: #2563eb;
+      border-color: #1d4ed8;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 22px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    /* LAYOUT */
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 22px 18px 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .grid-overlay {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.1;
+      background-image:
+        linear-gradient(rgba(15, 23, 42, 0.4) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 23, 42, 0.4) 1px, transparent 1px);
+      background-size: 80px 80px;
+      mix-blend-mode: normal;
+      z-index: 0;
+    }
+
+    /* HERO */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.2fr);
+      gap: 28px;
+      margin-top: 16px;
+    }
+
+    .hero-left {
+      padding: 24px 22px 22px;
+      border-radius: 20px;
+      background: #020617;
+      border: 1px solid var(--border);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(55, 65, 81, 1);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--green);
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin: 0 0 10px;
+    }
+
+    .hero-title span {
+      color: #facc15;
+    }
+
+    .hero-subline {
+      font-size: 0.96rem;
+      max-width: 520px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .hero-subline strong {
+      color: var(--text-main);
+    }
+
+    .hero-subline-ar {
+      margin-top: 6px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      direction: rtl;
+      text-align: right;
+      line-height: 1.5;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 20px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      border: 1px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.15s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      border-color: rgba(37, 99, 235, 1);
+      color: #e5e7eb;
+    }
+
+    .btn-primary:hover {
+      background: #2563eb;
+      border-color: #1d4ed8;
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border-color: rgba(55, 65, 81, 1);
+      color: var(--text-muted);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.95);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .btn-danger {
+      background: #7f1d1d;
+      border-color: #b91c1c;
+      color: #fee2e2;
+    }
+
+    .btn-danger:hover {
+      background: #991b1b;
+      border-color: #b91c1c;
+      transform: translateY(-1px);
+    }
+
+    .btn-icon {
+      font-size: 1rem;
+    }
+
+    .hero-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .metric {
+      min-width: 120px;
+    }
+
+    .metric-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .metric-value {
+      margin-top: 4px;
+      font-size: 1rem;
+    }
+
+    .metric-value.green {
+      color: var(--green);
+    }
+
+    .metric-value.red {
+      color: var(--red);
+    }
+
+    .hero-tag {
+      margin-top: 16px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* HERO RIGHT: LIVE MARKETS */
+
+    .hero-right {
+      padding: 18px 18px 16px;
+      border-radius: 20px;
+      background: #020617;
+      border: 1px solid rgba(31, 41, 55, 0.9);
+    }
+
+    .live-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .live-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .live-pill {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 1);
+      color: var(--text-muted);
+    }
+
+    .live-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+
+    .live-asset {
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(31, 41, 55, 1);
+      background: rgba(15, 23, 42, 0.95);
+      display: inline-flex;
+      gap: 4px;
+      align-items: center;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+    }
+
+    .live-dot.green {
+      background: var(--green);
+    }
+
+    .live-dot.red {
+      background: var(--red);
+    }
+
+    .tradingview-widget-container {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(31, 41, 55, 1);
+      background: #020617;
+    }
+
+    /* SECCIONES GENERALES */
+
+    section {
+      margin-top: 40px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 0.98rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .section-title-ar {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      letter-spacing: 0;
+      text-transform: none;
+      margin-top: 3px;
+      direction: rtl;
+      text-align: right;
+    }
+
+    .section-pill {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 1);
+      color: var(--text-muted);
+    }
+
+    .section-body p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      line-height: 1.6;
+    }
+
+    .dual-text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .dual-text .ar {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      direction: rtl;
+      text-align: right;
+      line-height: 1.6;
+    }
+
+    .split-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 24px;
+      margin-top: 18px;
+    }
+
+    .card {
+      border-radius: 20px;
+      background: #020617;
+      border: 1px solid var(--border);
+      padding: 18px 18px 20px;
+    }
+
+    .card-title {
+      font-size: 0.9rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .card p {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* INDICATORS */
+
+    .indicators-grid {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .indicator-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .indicator-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .pill-blue {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(59, 130, 246, 0.7);
+      color: #bfdbfe;
+    }
+
+    .indicator-name {
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    .indicator-name-ar {
+      display: block;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      direction: rtl;
+      text-align: right;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin: 10px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 6px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .feature-list.small {
+      font-size: 0.82rem;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      line-height: 1.4;
+    }
+
+    .feature-list i {
+      margin-top: 2px;
+      font-size: 0.8rem;
+      color: var(--green);
+    }
+
+    .indicator-previews {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .indicator-previews img {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+      border: 1px solid rgba(31, 41, 55, 1);
+      background: #020617;
+      object-fit: cover;
+    }
+
+    /* RESULTS / GALLERY */
+
+    .stats-grid {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .stat-card {
+      border-radius: 16px;
+      background: #020617;
+      border: 1px solid rgba(31, 41, 55, 1);
+      padding: 12px 14px;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .stat-value {
+      margin-top: 4px;
+      font-size: 1.1rem;
+    }
+
+    .results-grid {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .result-item img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid rgba(31, 41, 55, 1);
+      background: #020617;
+      display: block;
+      object-fit: cover;
+    }
+
+    .results-video {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 16px;
+      align-items: center;
+    }
+
+    .results-video iframe,
+    .results-video img {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid rgba(31, 41, 55, 1);
+      background: #000;
+      min-height: 220px;
+    }
+
+    /* ACTIVATION */
+
+    .steps-grid {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .step-card {
+      border-radius: 16px;
+      background: #020617;
+      border: 1px solid rgba(31, 41, 55, 1);
+      padding: 12px 14px 14px;
+    }
+
+    .step-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .step-number {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+
+    .step-title {
+      font-size: 0.86rem;
+      font-weight: 500;
+    }
+
+    .step-text {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .step-text.ar {
+      margin-top: 3px;
+      direction: rtl;
+      text-align: right;
+      font-size: 0.82rem;
+    }
+
+    /* PRICING */
+
+    .pricing-grid {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .pricing-card {
+      border-radius: 20px;
+      background: #020617;
+      border: 1px solid rgba(31, 41, 55, 1);
+      padding: 18px 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .pricing-card.highlight {
+      border-color: rgba(37, 99, 235, 0.9);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.8);
+    }
+
+    .pricing-name {
+      font-size: 0.96rem;
+      font-weight: 600;
+    }
+
+    .pricing-name-ar {
+      display: block;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      direction: rtl;
+      text-align: right;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+
+    .price {
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    .price-period {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .price-ar {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      direction: rtl;
+      text-align: right;
+    }
+
+    .pricing-tag {
+      align-self: flex-start;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(59, 130, 246, 0.7);
+      color: #bfdbfe;
+    }
+
+    .pricing-card .btn {
+      margin-top: 4px;
+      align-self: flex-start;
+      padding-inline: 18px;
+    }
+
+    /* FAQ */
+
+    .faq-list {
+      margin-top: 18px;
+      border-radius: 16px;
+      background: #020617;
+      border: 1px solid rgba(31, 41, 55, 1);
+      overflow: hidden;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(31, 41, 55, 1);
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 0.86rem;
+      cursor: pointer;
+      color: var(--text-main);
+    }
+
+    .faq-toggle {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(75, 85, 99, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 12px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      transition: max-height 0.25s ease, padding 0.25s ease;
+      line-height: 1.6;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 260px;
+      padding: 0 12px 10px;
+    }
+
+    .faq-item.active .faq-toggle {
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    /* AFFILIATE */
+
+    .reward-grid {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .reward-card {
+      border-radius: 16px;
+      background: #020617;
+      border: 1px solid rgba(31, 41, 55, 1);
+      padding: 14px 16px;
+    }
+
+    .reward-title {
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .reward-icon {
+      font-size: 1.1rem;
+    }
+
+    .affiliate-features {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      font-size: 0.82rem;
+    }
+
+    .affiliate-feature {
+      border-radius: 14px;
+      background: #020617;
+      border: 1px solid rgba(31, 41, 55, 1);
+      padding: 10px 12px;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    .affiliate-link-card {
+      margin-top: 20px;
+      border-radius: 16px;
+      background: #020617;
+      border: 1px solid rgba(31, 41, 55, 1);
+      padding: 14px 16px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 14px;
+      align-items: center;
+    }
+
+    .affiliate-link-input {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      background: #020617;
+      border-radius: 999px;
+      border: 1px solid rgba(31, 41, 55, 1);
+      padding: 6px 10px;
+      color: var(--text-muted);
+    }
+
+    .affiliate-link-input code {
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .affiliate-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .affiliate-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 70px;
+    }
+
+    .affiliate-stat-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+    }
+
+    .affiliate-stat-value {
+      font-size: 0.9rem;
+    }
+
+    /* CONTACTO */
+
+    .contact-grid {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 20px;
+    }
+
+    .contact-form {
+      border-radius: 18px;
+      background: #020617;
+      border: 1px solid rgba(31, 41, 55, 1);
+      padding: 16px 18px 18px;
+    }
+
+    .contact-form h3 {
+      margin: 0 0 8px;
+      font-size: 0.96rem;
+    }
+
+    .contact-form label {
+      display: block;
+      font-size: 0.8rem;
+      margin-top: 8px;
+      margin-bottom: 4px;
+      color: var(--text-muted);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid rgba(31, 41, 55, 1);
+      background: #020617;
+      color: var(--text-main);
+      padding: 8px 10px;
+      font-family: inherit;
+      font-size: 0.86rem;
+    }
+
+    .contact-form textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .contact-form .btn {
+      margin-top: 12px;
+    }
+
+    .contact-side {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-card {
+      border-radius: 16px;
+      background: #020617;
+      border: 1px solid rgba(31, 41, 55, 1);
+      padding: 12px 14px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .contact-card-title {
+      font-size: 0.86rem;
+      margin-bottom: 4px;
+      color: var(--text-main);
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 4px;
+      font-size: 0.84rem;
+    }
+
+    .contact-link i {
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+
+    .contact-questions {
+      font-size: 0.8rem;
+      margin-top: 6px;
+      line-height: 1.6;
+    }
+
+    .contact-questions .ar {
+      display: block;
+      margin-top: 3px;
+      direction: rtl;
+      text-align: right;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      margin-top: 40px;
+      padding: 16px 10px 26px;
+      border-top: 1px solid rgba(31, 41, 55, 1);
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .footer p {
+      margin: 4px 0;
+      line-height: 1.5;
+    }
+
+    .footer strong {
+      color: #fecaca;
+    }
+
+    .footer .ar {
+      display: block;
+      margin-top: 4px;
+      direction: rtl;
+      text-align: right;
+    }
+
+    /* LANGUAGE TOGGLE LOGIC */
+
+    body[data-lang="en"] .dual-text .ar,
+    body[data-lang="en"] .hero-subline-ar,
+    body[data-lang="en"] .footer .ar,
+    body[data-lang="en"] .step-text.ar {
+      display: none;
+    }
+
+    body[data-lang="ar"] .dual-text .en,
+    body[data-lang="ar"] .hero-subline,
+    body[data-lang="ar"] .footer p:not(.ar),
+    body[data-lang="ar"] .step-text:not(.ar) {
+      display: none;
+    }
+
+    /* REVEAL */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition:
+        opacity 0.5s ease-out,
+        transform 0.5s ease-out;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 960px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .hero-right {
+        order: -1;
+      }
+      .split-2 {
+        grid-template-columns: 1fr;
+      }
+      .indicators-grid {
+        grid-template-columns: 1fr;
+      }
+      .indicator-card {
+        grid-template-columns: 1fr;
+      }
+      .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .results-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .steps-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+      .reward-grid {
+        grid-template-columns: 1fr;
+      }
+      .affiliate-features {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .affiliate-link-card {
+        grid-template-columns: 1fr;
+      }
+      .results-video {
+        grid-template-columns: 1fr;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-inner {
+        padding: 0 14px;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 10px;
+        background: #020617;
+        border-radius: 16px;
+        border: 1px solid rgba(31, 41, 55, 1);
+        box-shadow: 0 16px 30px rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 10px;
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .page {
+        padding-inline: 14px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+      .results-grid {
+        grid-template-columns: 1fr;
+      }
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+      .affiliate-features {
+        grid-template-columns: 1fr;
+      }
+
+      .lang-switch {
+        order: 3;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-overlay"></div>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <div class="nav-logo">S</div>
+        <div class="nav-text">
+          <div class="nav-title">Sam <span>golden</span> Indicators</div>
+          <div class="nav-subtitle">Professional · Indicators · Tradingview</div>
+        </div>
+      </div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#indicators">Indicators</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#activation">Activation</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#affiliate">Affiliate</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="lang-switch" id="langSwitch">
+        <button type="button" class="lang-option active" data-lang="en">EN</button>
+        <button type="button" class="lang-option" data-lang="ar">AR</button>
+      </div>
+
+      <div class="nav-cta">
+        <a href="#pricing">
+          <span>Subscribe</span>
+        </a>
+      </div>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main class="page">
+    <!-- HERO -->
+    <section class="hero reveal" id="hero">
+      <!-- LEFT -->
+      <div class="hero-left">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          <span>Bank-level indicators · Gold · Indices · Forex</span>
+        </div>
+
+        <h1 class="hero-title">
+          Sam Golden <span>Indicators</span>
+        </h1>
+        <p class="hero-subline">
+          Private TradingView indicators that highlight <strong>entry, stop loss and take profit zones</strong>
+          automatically. Tools for serious traders who want clear levels, not magic promises.
+        </p>
+        <p class="hero-subline-ar">
+          مؤشرات خاصة على منصة <strong>TradingView</strong> تُظهر مناطق الدخول ووقف الخسارة وجني الأرباح بشكل آلي.
+          أدوات للمتداولين الجادّين الذين يريدون مستويات واضحة، لا وعودًا سحرية.
+        </p>
+
+        <div class="hero-cta-row">
+          <a href="#pricing" class="btn btn-primary">
+            <span class="btn-icon"><i class="fa-solid fa-dollar-sign"></i></span>
+            <span>View Pricing</span>
+          </a>
+          <a href="#indicators" class="btn btn-ghost">
+            <span class="btn-icon"><i class="fa-solid fa-chart-line"></i></span>
+            <span>See Indicators</span>
+          </a>
+          <a href="[LINK_TELEGRAM_MAIN]" class="btn btn-danger">
+            <span class="btn-icon"><i class="fa-brands fa-telegram"></i></span>
+            <span>Telegram</span>
+          </a>
+        </div>
+
+        <div class="hero-metrics">
+          <div class="metric">
+            <div class="metric-label">Platform</div>
+            <div class="metric-value green">TradingView · Invite Only</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Markets</div>
+            <div class="metric-value">Gold · Indices · Forex · Crypto</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Style</div>
+            <div class="metric-value">Scalping / Intraday</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Risk</div>
+            <div class="metric-value red">High · Only risk capital</div>
+          </div>
+        </div>
+
+        <div class="hero-tag">
+          Educational use only · لا توجد أي ضمانات للربح
+        </div>
+      </div>
+
+      <!-- RIGHT: LIVE MARKETS -->
+      <div class="hero-right">
+        <div class="live-header">
+          <h2 class="live-title">Live markets</h2>
+          <div class="live-pill">TradingView widget</div>
+        </div>
+        <div class="live-list">
+          <div class="live-asset">
+            <span class="live-dot green"></span> XAUUSD
+          </div>
+          <div class="live-asset">
+            <span class="live-dot green"></span> EURUSD
+          </div>
+          <div class="live-asset">
+            <span class="live-dot red"></span> NAS100
+          </div>
+          <div class="live-asset">
+            <span class="live-dot green"></span> BTCUSD
+          </div>
+        </div>
+
+        <div class="tradingview-widget-container">
+          <div id="tradingview_live"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INDICATORS -->
+    <section id="indicators" class="reveal">
+      <div class="section-header">
+        <h2 class="section-title">
+          Indicators
+          <span class="section-title-ar">المؤشرات</span>
+        </h2>
+        <div class="section-pill">Sam 1 · Sam 2</div>
+      </div>
+      <div class="section-body">
+        <p class="dual-text">
+          <span class="en">
+            Both indicators are invite-only scripts on TradingView. They read structure, liquidity
+            and volatility to highlight clear zones on the chart. You still control the risk and
+            press the button – these tools do not replace your responsibility.
+          </span>
+          <span class="ar">
+            كلتا الأداتين عبارة عن مؤشرات خاصة (Invite-Only) على منصة TradingView. تحلّل البنية السعرية
+            والسيولة والتذبذب لتوضيح المناطق المهمة على الرسم البياني. أنت مَن يقرّر حجم المخاطرة ويضغط زر الدخول – 
+            هذه الأدوات لا تُلغي مسؤوليتك.
+          </span>
+        </p>
+      </div>
+
+      <div class="indicators-grid">
+        <!-- SAM 1 -->
+        <div class="indicator-card card">
+          <div>
+            <div class="indicator-header">
+              <span class="pill-blue">Indicator 1</span>
+            </div>
+            <h3 class="indicator-name">
+              Sam 1 – Complete System
+              <span class="indicator-name-ar">سام 1 – نظام متكامل</span>
+            </h3>
+            <p class="dual-text">
+              <span class="en">
+                Sam 1 is a complete trading system. It automatically plots entry zones, two take-profit
+                targets (TP1, TP2) and a protective stop loss (SL) on your chart, helping you manage
+                trades without over-thinking every candle.
+              </span>
+              <span class="ar">
+                سام 1 هو نظام تداول متكامل. يرسم تلقائيًا مناطق الدخول، وهدفين لجني الأرباح (TP1, TP2)،
+                ووقف خسارة حماية (SL) على الرسم البياني، ليساعدك على إدارة الصفقة بدون المبالغة في تحليل كل شمعة.
+              </span>
+            </p>
+            <ul class="feature-list">
+              <li><i class="fa-solid fa-check"></i> Automatic entry and exit zones.</li>
+              <li><i class="fa-solid fa-check"></i> Take-profit and stop-loss levels based on structure.</li>
+              <li><i class="fa-solid fa-check"></i> Works on multiple timeframes (scalping to intraday).</li>
+              <li><i class="fa-solid fa-check"></i> Designed for gold, indices and major forex pairs.</li>
+            </ul>
+          </div>
+          <div class="indicator-previews">
+            <img src="[IMAGE_SAM1_1]" alt="Sam 1 example 1" />
+            <img src="[IMAGE_SAM1_2]" alt="Sam 1 example 2" />
+            <img src="[IMAGE_SAM1_3]" alt="Sam 1 example 3" />
+          </div>
+        </div>
+
+        <!-- SAM 2 -->
+        <div class="indicator-card card">
+          <div>
+            <div class="indicator-header">
+              <span class="pill-blue">Indicator 2</span>
+            </div>
+            <h3 class="indicator-name">
+              Sam 2 – Directional Bias
+              <span class="indicator-name-ar">سام 2 – مؤشر الاتجاه</span>
+            </h3>
+            <p class="dual-text">
+              <span class="en">
+                Sam 2 focuses on market direction. Dynamic zones show high-probability buy and sell areas,
+                helping you filter noise and trade only when price is aligned with the main bias.
+              </span>
+              <span class="ar">
+                يركّز سام 2 على اتجاه السوق. يوضّح مناطق الشراء والبيع ذات الاحتمالية الأعلى من خلال نطاقات ديناميكية،
+                ليساعدك على تصفية الضوضاء في السوق والالتزام بالصفقات المتوافقة مع الاتجاه العام.
+              </span>
+            </p>
+            <ul class="feature-list">
+              <li><i class="fa-solid fa-check"></i> Clear bullish / bearish bias on the chart.</li>
+              <li><i class="fa-solid fa-check"></i> Zones where reversals and continuations often start.</li>
+              <li><i class="fa-solid fa-check"></i> Works together with Sam 1 or as a standalone filter.</li>
+              <li><i class="fa-solid fa-check"></i> Useful for gold, indices, forex and crypto.</li>
+            </ul>
+          </div>
+          <div class="indicator-previews">
+            <img src="[IMAGE_SAM2_1]" alt="Sam 2 example 1" />
+            <img src="[IMAGE_SAM2_2]" alt="Sam 2 example 2" />
+            <img src="[IMAGE_SAM2_3]" alt="Sam 2 example 3" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS / GALLERY -->
+    <section id="results" class="reveal">
+      <div class="section-header">
+        <h2 class="section-title">
+          Trading Results
+          <span class="section-title-ar">نتائج التداول</span>
+        </h2>
+        <div class="section-pill">Screenshots & examples</div>
+      </div>
+      <div class="section-body">
+        <p class="dual-text">
+          <span class="en">
+            Below you can see real chart screenshots using Sam 1 and Sam 2 indicators. These images are
+            examples of how the tools mark entries, TP and SL levels in live market conditions. Past
+            performance does <strong>not</strong> guarantee future results.
+          </span>
+          <span class="ar">
+            في الأسفل تجد لقطات حقيقية من الرسوم البيانية باستخدام مؤشري سام 1 وسام 2. هذه الصور أمثلة فقط
+            توضّح كيف تُظهر الأدوات مناطق الدخول و TP و SL في ظروف السوق الحقيقية.
+            الأداء السابق <strong>لا يضمن</strong> أي نتائج مستقبلية.
+          </span>
+        </p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Active users</div>
+          <div class="stat-value">500+ traders</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Screenshots logged</div>
+          <div class="stat-value">10,000+ examples</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Years in markets</div>
+          <div class="stat-value">3+ years</div>
+        </div>
+      </div>
+
+      <div class="results-grid">
+        <div class="result-item"><img src="[IMAGE_RESULT_1]" alt="Trading result 1" /></div>
+        <div class="result-item"><img src="[IMAGE_RESULT_2]" alt="Trading result 2" /></div>
+        <div class="result-item"><img src="[IMAGE_RESULT_3]" alt="Trading result 3" /></div>
+        <div class="result-item"><img src="[IMAGE_RESULT_4]" alt="Trading result 4" /></div>
+        <div class="result-item"><img src="[IMAGE_RESULT_5]" alt="Trading result 5" /></div>
+        <div class="result-item"><img src="[IMAGE_RESULT_6]" alt="Trading result 6" /></div>
+      </div>
+
+      <div class="results-video card">
+        <div>
+          <div class="card-title">Video demonstrations</div>
+          <p class="dual-text">
+            <span class="en">
+              Watch short videos showing how Sam 1 and Sam 2 behave in different market conditions:
+              ranging sessions, strong trends and news spikes. Focus on how levels are respected, not
+              on the money amount on screen.
+            </span>
+            <span class="ar">
+              شاهد مقاطع فيديو قصيرة توضّح كيف يتصرّف سام 1 وسام 2 في أوضاع سوق مختلفة:
+              تذبذب، ترند قوي، وأوقات الأخبار. ركّز على احترام المستويات وطريقة الحركة،
+              وليس على حجم الأرباح أو الخسائر الظاهر في الحسابات.
+            </span>
+          </p>
+          <a href="[LINK_RESULTS_VIDEO]" class="btn btn-primary" style="margin-top:10px;">
+            <span class="btn-icon"><i class="fa-solid fa-play"></i></span>
+            <span>Watch Video · شاهد الفيديو</span>
+          </a>
+        </div>
+        <div>
+          <iframe src="[LINK_RESULTS_VIDEO_EMBED]" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACTIVATION GUIDE -->
+    <section id="activation" class="reveal">
+      <div class="section-header">
+        <h2 class="section-title">
+          Activation Guide
+          <span class="section-title-ar">دليل التفعيل</span>
+        </h2>
+        <div class="section-pill">TradingView access</div>
+      </div>
+      <div class="section-body">
+        <p class="dual-text">
+          <span class="en">
+            Follow these simple steps to activate your indicators on TradingView. The whole process
+            usually takes less than 24 hours after confirming your payment.
+          </span>
+          <span class="ar">
+            اتّبع هذه الخطوات البسيطة لتفعيل المؤشرات على حسابك في TradingView.
+            عادةً لا يستغرق الإجراء أكثر من ٢٤ ساعة بعد تأكيد الدفع.
+          </span>
+        </p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-top">
+            <div class="step-number">1</div>
+            <div class="step-title">Send your payment</div>
+          </div>
+          <div class="step-text">
+            After choosing your plan, send the subscription payment using the method we provide
+            (USDT / bank / other).
+          </div>
+          <div class="step-text ar">
+            بعد اختيار الخطة، أرسل مبلغ الاشتراك بالطريقة المتفق عليها
+            (USDT أو تحويل بنكي أو غيره).
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-top">
+            <div class="step-number">2</div>
+            <div class="step-title">Share your TradingView username</div>
+          </div>
+          <div class="step-text">
+            Send your TradingView username together with proof of payment so we can give access
+            to the invite-only indicators.
+          </div>
+          <div class="step-text ar">
+            أرسل اسم المستخدم الخاص بحسابك على TradingView مع إثبات الدفع
+            حتى نتمكّن من منحك صلاحية استخدام المؤشرات الخاصة.
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-top">
+            <div class="step-number">3</div>
+            <div class="step-title">Receive invite-only access</div>
+          </div>
+          <div class="step-text">
+            You will receive an invite on TradingView giving you access to “Sam 1” and/or “Sam 2”
+            depending on the plan you selected.
+          </div>
+          <div class="step-text ar">
+            ستصلك دعوة على TradingView تمنحك صلاحية الوصول إلى “Sam 1”
+            و/أو “Sam 2” حسب الخطة التي اخترتها.
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-top">
+            <div class="step-number">4</div>
+            <div class="step-title">Add indicators to your chart</div>
+          </div>
+          <div class="step-text">
+            From the “Indicators” menu on TradingView, open the “Invite-only scripts” tab and
+            add the indicators to your preferred chart.
+          </div>
+          <div class="step-text ar">
+            من قائمة “Indicators” في TradingView افتح تبويب “Invite-only scripts”
+            وأضف المؤشر إلى الرسم البياني الذي تريد العمل عليه.
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-top">
+            <div class="step-number">5</div>
+            <div class="step-title">Adjust risk and lot size</div>
+          </div>
+          <div class="step-text">
+            Configure your broker, lot size and risk per trade according to your personal plan.
+            The indicator gives levels – you decide the exposure.
+          </div>
+          <div class="step-text ar">
+            اضبط إعدادات الوسيط وحجم العقد ونسبة المخاطرة في كل صفقة حسب خطتك الخاصة.
+            المؤشر يعطيك المستويات، وأنت مَن يقرّر حجم التعرض.
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-top">
+            <div class="step-number">6</div>
+            <div class="step-title">Start trading responsibly</div>
+          </div>
+          <div class="step-text">
+            Use the indicators as a tool, not as a guarantee. Always remember that trading is high-risk
+            and you can lose all the money you deposit.
+          </div>
+          <div class="step-text ar">
+            استخدم المؤشرات كأداة مساعدة وليست ضمانًا للربح.
+            تذكّر دائمًا أن التداول ذو مخاطرة عالية ويمكن أن يؤدّي إلى خسارة كامل رأس المال المودَع.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="reveal">
+      <div class="section-header">
+        <h2 class="section-title">
+          Pricing
+          <span class="section-title-ar">الأسعار</span>
+        </h2>
+        <div class="section-pill">Monthly subscription · اشتراك شهري</div>
+      </div>
+      <div class="section-body">
+        <p class="dual-text">
+          <span class="en">
+            No free trial. Choose your monthly subscription: access is billed in USD and includes
+            TradingView invite-only access plus basic support.
+          </span>
+          <span class="ar">
+            بدون فترة تجريبية. اختر اشتراكك الشهري:
+            تُحتسب الرسوم بالدولار الأمريكي وتشمل صلاحية المؤشرات على TradingView
+            بالإضافة إلى دعم أساسي.
+          </span>
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Plan Sam 1 -->
+        <div class="pricing-card">
+          <div class="pricing-name">
+            Sam 1 Indicator
+            <span class="pricing-name-ar">مؤشر سام 1</span>
+          </div>
+          <div class="price-row">
+            <span class="price">$150</span>
+            <span class="price-period">/ month</span>
+          </div>
+          <div class="price-ar">١٥٠ دولار في الشهر</div>
+          <ul class="feature-list small">
+            <li><i class="fa-solid fa-check"></i> Full access to Sam 1 on TradingView.</li>
+            <li><i class="fa-solid fa-check"></i> Use on multiple devices with your TV account.</li>
+            <li><i class="fa-solid fa-check"></i> Email / Telegram support for setup questions.</li>
+            <li><i class="fa-solid fa-check"></i> Educational guidance on how to read the levels.</li>
+          </ul>
+          <a href="[LINK_SUBSCRIBE_SAM1]" class="btn btn-primary">
+            <span class="btn-icon"><i class="fa-solid fa-lock-open"></i></span>
+            <span>Subscribe to Sam 1</span>
+          </a>
+        </div>
+
+        <!-- Plan Sam 2 -->
+        <div class="pricing-card highlight">
+          <div class="pricing-tag">Most popular</div>
+          <div class="pricing-name">
+            Sam 2 Indicator
+            <span class="pricing-name-ar">مؤشر سام 2</span>
+          </div>
+          <div class="price-row">
+            <span class="price">$200</span>
+            <span class="price-period">/ month</span>
+          </div>
+          <div class="price-ar">٢٠٠ دولار في الشهر</div>
+          <ul class="feature-list small">
+            <li><i class="fa-solid fa-check"></i> Full access to Sam 2 on TradingView.</li>
+            <li><i class="fa-solid fa-check"></i> Directional bias and high-probability zones.</li>
+            <li><i class="fa-solid fa-check"></i> Priority support for technical issues.</li>
+            <li><i class="fa-solid fa-check"></i> Best option for active intraday traders.</li>
+          </ul>
+          <a href="[LINK_SUBSCRIBE_SAM2]" class="btn btn-primary">
+            <span class="btn-icon"><i class="fa-solid fa-crown"></i></span>
+            <span>Subscribe to Sam 2</span>
+          </a>
+        </div>
+      </div>
+
+      <p style="font-size:0.8rem;color:#fca5a5;margin-top:10px;">
+        <strong>Note:</strong> All prices are in USD. Digital products – no refunds after access is activated.
+        <span class="ar">
+          ملاحظة: جميع الأسعار بالدولار الأمريكي. المنتج رقمي – 
+          لا توجد استرجاعات بعد تفعيل الوصول إلى المؤشرات.
+        </span>
+      </p>
+    </section>
+
+    <!-- FAQ (general) -->
+    <section id="faq" class="reveal">
+      <div class="section-header">
+        <h2 class="section-title">
+          Frequently Asked Questions
+          <span class="section-title-ar">الأسئلة الشائعة</span>
+        </h2>
+        <div class="section-pill">Basics · الأساسيات</div>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How do I get access after payment?</span>
+            <div class="faq-toggle">+</div>
+          </div>
+          <div class="faq-answer dual-text">
+            <span class="en">
+              After confirming your payment, send your TradingView username and proof of payment.
+              Your indicators will be activated within 24 hours.
+            </span>
+            <span class="ar">
+              بعد تأكيد الدفع، أرسل اسم المستخدم في TradingView مع إثبات التحويل.
+              سيتم تفعيل المؤشرات خلال ٢٤ ساعة كحد أقصى.
+            </span>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Can I use the indicators on multiple devices?</span>
+            <div class="faq-toggle">+</div>
+          </div>
+          <div class="faq-answer dual-text">
+            <span class="en">
+              Yes. As long as you are logged in with the same TradingView account, you can use the
+              indicators on different devices (PC, laptop, phone, tablet).
+            </span>
+            <span class="ar">
+              نعم، يمكنك استخدام المؤشرات على أكثر من جهاز طالما أنك مسجّل الدخول بنفس حساب
+              TradingView (حاسوب، لابتوب، هاتف، تابلت).
+            </span>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Which markets do the indicators work on?</span>
+            <div class="faq-toggle">+</div>
+          </div>
+          <div class="faq-answer dual-text">
+            <span class="en">
+              They work on any TradingView symbol where you can load the script: forex, indices,
+              gold, crypto and more. You choose the assets – always respecting your own plan.
+            </span>
+            <span class="ar">
+              تعمل المؤشرات على أي أصل موجود في TradingView يمكن تحميل السكربت عليه:
+              الفوركس، المؤشرات، الذهب، العملات الرقمية وغيرها. أنت تختار الأصول
+              بما يتناسب مع خطتك وإدارة رأس مالك.
+            </span>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Do you offer refunds or a free trial?</span>
+            <div class="faq-toggle">+</div>
+          </div>
+          <div class="faq-answer dual-text">
+            <span class="en">
+              No. There is no free trial and no refunds after access is granted, due to the digital
+              nature of the product. Please subscribe only with money you can afford to lose.
+            </span>
+            <span class="ar">
+              لا. لا توجد فترة تجريبية ولا استرجاع بعد تفعيل الوصول إلى المؤشرات
+              بسبب طبيعة المنتج الرقمية. اشترك فقط بأموال يمكنك تحمّل خسارتها.
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AFFILIATE PROGRAM -->
+    <section id="affiliate" class="reveal">
+      <div class="section-header">
+        <h2 class="section-title">
+          Affiliate Program
+          <span class="section-title-ar">برنامج الشراكة (الأفلييت)</span>
+        </h2>
+        <div class="section-pill">Earn by sharing · اربح من التوصية</div>
+      </div>
+      <div class="section-body">
+        <p class="dual-text">
+          <span class="en">
+            If you have a community or friends who trade, you can earn commissions by referring
+            new subscribers to Sam Indicators. Choose how you prefer to be rewarded.
+          </span>
+          <span class="ar">
+            إذا كان لديك أصدقاء أو مجتمع مهتم بالتداول، يمكنك كسب عمولة عن كل مشترك جديد
+            تحيله إلى مؤشرات سام. اختر الطريقة التي تريد أن تتقاضى بها مكافأتك.
+          </span>
+        </p>
+      </div>
+
+      <div class="reward-grid">
+        <div class="reward-card">
+          <div class="reward-title">
+            <span class="reward-icon"><i class="fa-solid fa-dollar-sign"></i></span>
+            Cash reward
+          </div>
+          <p class="dual-text">
+            <span class="en">
+              Receive a fixed cash amount for each new paid subscriber that joins through your link.
+            </span>
+            <span class="ar">
+              تحصل على مبلغ مالي ثابت عن كل مشترك مدفوع جديد ينضم عبر رابطك الخاص.
+            </span>
+          </p>
+        </div>
+
+        <div class="reward-card">
+          <div class="reward-title">
+            <span class="reward-icon"><i class="fa-solid fa-gift"></i></span>
+            Free month access
+          </div>
+          <p class="dual-text">
+            <span class="en">
+              Or convert your referrals into extra free months of access to Sam indicators.
+            </span>
+            <span class="ar">
+              أو يمكنك تحويل الإحالات إلى أشهر إضافية مجانية من استخدام مؤشرات سام.
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <div class="affiliate-features">
+        <div class="affiliate-feature">
+          <strong>Dashboard</strong><br />
+          Real-time view of clicks, referrals and earnings.
+        </div>
+        <div class="affiliate-feature">
+          <strong>Payouts</strong><br />
+          Monthly payouts via USDT or other agreed method.
+        </div>
+        <div class="affiliate-feature">
+          <strong>Materials</strong><br />
+          Banners, screenshots and texts ready to share.
+        </div>
+        <div class="affiliate-feature">
+          <strong>Tracking</strong><br />
+          Long-term cookie tracking for your referrals.
+        </div>
+        <div class="affiliate-feature">
+          <strong>Support</strong><br />
+          Dedicated support for affiliate partners.
+        </div>
+        <div class="affiliate-feature">
+          <strong>Flexibility</strong><br />
+          Choose cash or free-month rewards per referral.
+        </div>
+      </div>
+
+      <div class="affiliate-link-card">
+        <div>
+          <div class="card-title">Your affiliate link</div>
+          <p class="dual-text">
+            <span class="en">
+              Once approved, you’ll receive a unique link. Share it with your audience to start
+              generating referrals and commissions.
+            </span>
+            <span class="ar">
+              بعد قبولك في البرنامج، ستحصل على رابط خاص بك.
+              شاركه مع متابعيك أو مجتمعك لبدء تحقيق إحالات وعمولات.
+            </span>
+          </p>
+          <div class="affiliate-link-input">
+            <code>https://your-domain.com/?ref=YOUR_ID</code>
+            <i class="fa-regular fa-copy"></i>
+          </div>
+        </div>
+        <div class="affiliate-stats">
+          <div class="affiliate-stat">
+            <span class="affiliate-stat-label">Clicks</span>
+            <span class="affiliate-stat-value">0</span>
+          </div>
+          <div class="affiliate-stat">
+            <span class="affiliate-stat-label">Referrals</span>
+            <span class="affiliate-stat-value">0</span>
+          </div>
+          <div class="affiliate-stat">
+            <span class="affiliate-stat-label">Earned</span>
+            <span class="affiliate-stat-value">$0</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:18px;display:flex;flex-wrap:wrap;gap:10px;">
+        <a href="[LINK_JOIN_AFFILIATE]" class="btn btn-primary">
+          <span class="btn-icon"><i class="fa-solid fa-user-plus"></i></span>
+          <span>Join Affiliate Program</span>
+        </a>
+        <a href="#contact" class="btn btn-ghost">
+          <span class="btn-icon"><i class="fa-solid fa-envelope"></i></span>
+          <span>Contact for details</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="reveal">
+      <div class="section-header">
+        <h2 class="section-title">
+          Get in touch
+          <span class="section-title-ar">تواصل معنا</span>
+        </h2>
+        <div class="section-pill">Support · questions · help</div>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Formulario -->
+        <div class="contact-form">
+          <h3>Send us a message</h3>
+          <p class="dual-text" style="font-size:0.84rem;">
+            <span class="en">
+              Fill in the form and we’ll reply within 24 hours. For urgent issues, please use
+              Telegram or WhatsApp.
+            </span>
+            <span class="ar">
+              املأ النموذج وسنقوم بالرد عليك خلال ٢٤ ساعة.
+              للحالات العاجلة يُفضّل التواصل عن طريق تيليجرام أو واتساب.
+            </span>
+          </p>
+          <form action="[FORM_ACTION_URL]" method="post">
+            <label for="name">Your Name</label>
+            <input id="name" name="name" type="text" placeholder="John Doe" required />
+
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" placeholder="Tell us how we can help..." required></textarea>
+
+            <button type="submit" class="btn btn-primary">
+              <span class="btn-icon"><i class="fa-solid fa-paper-plane"></i></span>
+              <span>Send Message</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Datos de contacto -->
+        <div class="contact-side">
+          <div class="contact-card">
+            <div class="contact-card-title">Other ways to reach us</div>
+            <div class="contact-link">
+              <i class="fa-solid fa-envelope"></i>
+              <span>[EMAIL_SUPPORT]</span>
+            </div>
+            <div class="contact-link">
+              <i class="fa-brands fa-telegram"></i>
+              <span>Telegram: [TELEGRAM_USERNAME]</span>
+            </div>
+            <div class="contact-link">
+              <i class="fa-brands fa-tiktok"></i>
+              <span>TikTok: [TIKTOK_USERNAME]</span>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-title">Common questions</div>
+            <div class="contact-questions dual-text">
+              <span class="en">
+                <strong>Activation time:</strong> usually within 24 hours after payment verification.<br />
+                <strong>Payments:</strong> USDT (TRC20) or other methods on request.
+              </span>
+              <span class="ar">
+                <strong>مدة التفعيل:</strong> عادةً خلال ٢٤ ساعة بعد التحقق من الدفع.<br />
+                <strong>طرق الدفع:</strong> USDT (TRC20) أو طرق أخرى حسب الاتفاق.
+              </span>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-title">Response time</div>
+            <p class="dual-text">
+              <span class="en">
+                We try to answer all messages within 24 hours. On trading days, replies may be slower
+                during the London and New York sessions.
+              </span>
+              <span class="ar">
+                نحاول الرد على جميع الرسائل خلال ٢٤ ساعة.
+                في أيام التداول قد يتأخر الرد قليلًا خلال جلسات لندن ونيويورك.
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>
+        <strong>Risk warning:</strong> Trading forex, indices, commodities and crypto with leverage
+        is very risky and can lead to the loss of all your capital. These indicators are educational tools,
+        not financial advice or a guarantee of results.
+      </p>
+      <p class="ar">
+        <strong>تحذير المخاطرة:</strong>
+        تداول الفوركس والمؤشرات والسلع والعملات الرقمية باستخدام الرافعة المالية
+        ينطوي على درجة عالية من المخاطرة وقد يؤدّي إلى خسارة كامل رأس المال.
+        هذه المؤشرات أدوات تعليمية فقط وليست نصيحة استثمارية أو ضمانًا لأي أرباح.
+      </p>
+      <p>© 2025 Secrets Banks Indicators. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Menú móvil
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Cerrar menú al hacer clic en un enlace (móvil)
+    document.querySelectorAll('#navLinks a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+
+    function handleReveal() {
+      const trigger = window.innerHeight * 0.85;
+      revealEls.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < trigger) {
+          el.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', handleReveal);
+    window.addEventListener('load', handleReveal);
+
+    // Language switch
+    const langSwitch = document.getElementById('langSwitch');
+    if (langSwitch) {
+      const langButtons = langSwitch.querySelectorAll('.lang-option');
+      document.body.setAttribute('data-lang', 'en');
+
+      langButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const lang = btn.getAttribute('data-lang');
+          document.body.setAttribute('data-lang', lang);
+          langButtons.forEach(b => {
+            b.classList.toggle('active', b === btn);
+          });
+        });
+      });
+    }
+  </script>
+
+  <!-- TradingView: script oficial + widget -->
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  <script type="text/javascript">
+    new TradingView.widget({
+      "width": "100%",
+      "height": 420,
+      "symbol": "OANDA:XAUUSD",
+      "interval": "60",
+      "timezone": "Europe/Madrid",
+      "theme": "dark",
+      "style": "1",
+      "locale": "en",
+      "toolbar_bg": "#020617",
+      "enable_publishing": false,
+      "hide_side_toolbar": false,
+      "allow_symbol_change": true,
+      "watchlist": [
+        "OANDA:XAUUSD",
+        "OANDA:EURUSD",
+        "OANDA:NAS100USD",
+        "BINANCE:BTCUSDT"
+      ],
+      "details": true,
+      "hotlist": true,
+      "calendar": true,
+      "container_id": "tradingview_live"
+    });
+  </script>
+</body>
+</html>
